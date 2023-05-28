@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funny Conversations - AI-powered Fun and Enjoyment</title>
+    <!-- Include Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <!-- Add custom CSS for styling -->
+    <style>
+      /* Customize the color and font theme */
+      body {
+        background-color: #110b11;
+        font-family: "Arial", sans-serif;
+        background-image: url("bg.png");
+        background-position: 50% 0;
+        background-repeat: repeat;
+        background-size: contain;
+        background-attachment: fixed;
+        font-family: Inter, sans-serif;
+        /* font-size: 2.5rem; */
+        font-weight: 400;
+        line-height: 28px;
+        color: rgba(240, 255, 255, 0.966)
+        
+      }
+      h1,
+      /* h2, */
+      h3 {
+        /* color: #343a40; */
+        font-weight: bold;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Oxygen, Fira Sans, Droid Sans, sans-serif;
+        font-size: 5rem;
+        color: rgba(240, 255, 255, 0.966);
+      }
+      p{
+        font-size: 1rem;
+        font-weight: 400;
+      }
+     .description {
+        color: #c6cbce;
+        font-size: 1.5rem;
+      }
+      h2{
+        color: rgba(240, 255, 255, 0.966);
+        font-size: 2rem;
+      }
+      /* Add custom styling for specific sections */
+      #hero { 
+        color: #fff; 
+      }
+
+      section {
+        display: grid;
+        place-items: center;
+        align-items: center;
+        min-height: 80vh;
+      } 
+      #hero_img {
+        margin: auto;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+      }
+      .hidden {
+        opacity: 0;
+        transition: all 2s;
+      }
+      .show {
+        opacity: 1;
+      }
+      @media (prefers-reduced-motion) {
+        .hidden {
+          transition: none;
+        }
+      }
+      .gradient {
+        -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(34deg, #51ce7f, #40b39e 50%, #e9d7fe 102%);
+    -webkit-background-clip: text;
+    background-clip:text
+      }
+      #logo{
+        width: 12rem;
+      }
+      
+      .cta-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #51ce7f;
+  background-image: linear-gradient(45deg, #40b39e 50%, #e9d7fe);
+  color: rgb(129, 4, 119);
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  font-size: 2rem;
+  font-weight: 500;
+  width: 22rem;
+  outline: none;
+  transition: 1s;
+}
+
+.cta-btn:hover {
+  /* background-color: #40b39e; */
+  background-image: linear-gradient(-45deg, #40b39e 40%, #e9d7fe);
+  transition: 1s;
+}
+
+.cta-btn:active {
+  background-color: #51ce7f;
+}
+.custom-box {
+    border-radius: 10px;
+    border-image: linear-gradient(45deg, #40b39e 50%, #e9d7fe) 1;
+    border: 2px solid #17a2b8;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      min-height: 30vh;
+      height:auto;
+      margin: 10px 0px;
+      text-align: center;
+    }
+ 
+    .custom-box h2 {
+      margin-bottom: 10px;
+    }
+    .custom-box p {
+      margin-bottom: 0;
+    }
+    .avatar{
+        width: 5rem;
+        height: 5rem;
+    }
+     
+    .btn_avatar{
+        width: 2rem;
+        height: 2rem;
+    }
+   
+     
+    
+  
+    
+    .input-field {
+      position: relative;
+      height: 5rem;
+      border-radius: 100px;
+      overflow: hidden; 
+      /* padding: 10px; */ 
+    }
+
+    input:focus{
+    outline: none;
+}
+    
+    .input-field input[type="email"] {
+      width: 100%;
+      height: 100%;
+      border: none;
+      padding-left: 3%;
+      font-size: 2rem;
+      background-color:  rgba(240, 255, 255, 0.966);;
+    }
+    
+    .input-field button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 15%;
+      height: 100%; 
+      background-image: linear-gradient(45deg, #40b39e 40%, #e9d7fe);
+      color: #fff;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      outline: none;
+      font-weight: 700;
+      transition: 0.5s;
+    }
+    
+    .input-field button:hover {
+      background-image: linear-gradient(-45deg, #40b39e 40%, #e9d7fe);
+     color: #141414;
+     transition: 0.5s;
+    }
+
+    #subscribe{
+      border: linear-gradient(45deg, #40b39e 50%, #e9d7fe);
+    width: 70%;
+    padding: 5rem;
+    box-shadow: 5px 5px 10px 10px #575458eb;
+    border-radius: 38px;
+    }
+    
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <div class="text-center pt-5" >
+        <img id="logo" src="final_logo.png" alt="logo" >
+    </div>
+     
+    <!-- Hero Section -->
+    <section id="hero" class="hidden">
+      <div class="hero text-center">
+        <div class="">
+          <h1 class="">Experience Fun <img src="smile.png" class="avatar"/> and Laughter</br>  in Your <span class="gradient">Conversations</span></h1>
+          <p class="mt-5 mb-5 description">
+            Introducing our AI-powered tool that's </br> designed to make your
+            conversations hilarious  and enjoyable.</br> Get ready for a delightful
+            and entertaining experience!
+          </p>
+          <a href="#" class="btn cta-btn">Let's Go For Fun! <img src="withEyes.png" class="btn_avatar"/></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="hidden">
+      <div class="container">
+        <!-- <h2>Features</h2> -->
+
+        <div class="row text-center">
+            <div class="col-md-6 mx-auto text-center">
+              <div class="custom-box">
+                <img src="smile.png" alt="smile" class="avatar">
+                <h2>Tell jokes that will leave you in stitches</h2>
+                <p>Description of the box content goes here. Receive witty and amusing responses to keep the laughter going</p>
+              </div>
+            </div>
+            <div class="col-md-6 mx-auto">
+              <div class="custom-box">
+                <img src="smile.png" alt="smile" class="avatar">
+                <h2>Share funny GIFs and emojis for added humor</h2>
+                <p>Description of the box content goes here. Receive witty and amusing responses to keep the laughter going</p>
+              </div>
+            </div>
+            <div class="col-md-6 mx-auto">
+              <div class="custom-box">
+                <img src="smile.png" alt="smile" class="avatar">
+                <h2>Play interactive games for endless entertainment</h2>
+                <p>Description of the box content goes here. Receive witty and amusing responses to keep the laughter going</p>
+              </div>
+            </div>
+            <div class="col-md-6 mx-auto">
+              <div class="custom-box">
+                <img src="smile.png" alt="smile" class="avatar">
+                <h2>Receive witty and amusing responses to </h2>
+                <p>Description of the box content goes here. Receive witty and amusing responses to keep the laughter going</p>
+              </div>
+            </div>
+          </div>
+
+         
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+     
+    <section id="how-it-works" class="hidden">
+      <div class="container"> 
+        <div class="row">
+           <div class="col-md-6 m-auto pr-5">
+          <h2 >Select Your Favorite Character, Ask you desired question, Start Chatting and Enjoy!!!!!</h2>
+           
+           
+        </div>
+           <div class="col-md-6 text-center">
+        <img src="ss.gif" alt="ss">
+        </div>
+        </div>
+       
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+
+
+
+    
+
+     
+
+
+
+
+    <!-- <section id="testimonials" class="hidden">
+      <div class="container">
+        <h2>What Our Users Say</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="testimonial">
+              <blockquote>
+                "I couldn't stop laughing while using this tool! It's a
+                fantastic way to brighten up your day!"
+              </blockquote>
+              <cite>- John Doe</cite>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="testimonial">
+              <blockquote>
+                "The jokes and humor provided by this tool are simply hilarious!
+                It never fails to put a smile on my face."
+              </blockquote>
+              <cite>- Jane Smith</cite>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Call-to-Action Section -->
+    <section id="cta" class="hidden text-center">
+      <div class="container">
+        <h1>Start Your Fun Conversation Now!</h1>
+        <p class="description mt-3 mb-4">Experience the joy and laughter with our AI-powered tool.</p>
+        <!-- <a href="#" class="btn cta-btn">Get Started</a> -->
+        <a href="#" class="btn cta-btn">Let's Enjoy! <img src="withEyes.png" class="btn_avatar"/></a>
+      </div>
+    </section>
+
+    <section id="Subscription" class="hidden">
+      <div id="subscribe">
+ <div class="text-center">
+        <!-- <h2>Email Subscription</h2> -->
+        <h2 class="pb-5">Join our newsletter <span class="gradient"><b>"AI Sunday"</b></span>  to stay up to date with the AI world</h2>
+      </div>
+      
+      <div class="subscription-section">
+        <div class="input-field">
+          <input type="email" placeholder="Enter your email address" />
+          <button type="submit">Try Now</button>
+        </div>
+      </div>
+      </div>
+     
+    </section>
+
+    <!-- About the Team Section -->
+    <!-- <section id="team" class="hidden">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>
+          We are a dedicated team passionate about creating entertaining
+          experiences through AI technology. Our mission is to bring joy and
+          laughter to your conversations.
+        </p>
+      </div>
+    </section> -->
+
+    <!-- Contact or Support Section -->
+    <!-- <section id="contact" class="hidden">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>
+          Have questions, suggestions, or funny experiences to share? We'd love
+          to hear from you!
+        </p> 
+      </div>
+    </section> -->
+    
+
+    <!-- Include Bootstrap JS and any additional scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      });
+      const hiddenElements = document.querySelectorAll(".hidden");
+      hiddenElements.forEach((element) => {
+        observer.observe(element);
+      });
+    </script>
+  </body>
+</html>
